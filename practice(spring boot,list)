@@ -1,0 +1,295 @@
+spring boot features
+auto config
+starter dependencies 
+cli-commmand line interface
+actuator
+
+auto configuration
+=saves time
+=configures application based on libraries
+=maven dependencies configured automatically
+
+starter dependencies
+=spring-boot-starter-web
+=spring-boot-starter-test
+=spring-boot-starter-data-jpa
+=spring-boot-starter-thymeleaf
+
+spring boot will include ost of the libraries neededfor testing like
+=JUnit
+Mockito
+Hamcrest
+Spring core
+Spring test
+
+spring boot starter jpa will include 
+=Spring Data JPA with hibernate
+=jdbc
+=Entity manager
+=Transaction API
+=Spring DATA API
+=Aspects
+
+if we include spring boot starterweb for web application development 
+=Web application development
+Spring MVC
+REST
+Tomcat
+
+spring.datasource.driverClassname=org.h2.driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2
+spring.datasource.url=jdbc:h2:mem:bugtracker
+
+public class Ascending{
+	public static void main(String args[])
+	{
+
+		// Get the ArrayList
+		ArrayList<String>
+			list = new ArrayList<String>();
+
+		// Populate the ArrayList
+		list.add("gggggggggg");
+		list.add("Fffffffffffff");
+		list.add("eeeeeeeeee");
+		list.add("qqqqqqqqqqqqq");
+		list.add("A computer portal");
+
+		// Print the unsorted ArrayList
+		System.out.println("Unsorted ArrayList: "
+						+ list);
+
+		// Sorting ArrayList in ascending Order
+		// using Collection.sort() method
+		Collections.sort(list);
+
+		// Print the sorted ArrayList
+		System.out.println("Sorted ArrayList "
+						+ "in Ascending order : "
+						+ list);
+	}
+}
+
+
+
+package javasample.list;
+
+	import java.util.*;
+	import java.util.function.Supplier;
+
+	public class listoperation {
+		public static void main(String args[])
+		{
+
+			// For ArrayList
+			List<Integer> list = new ArrayList<Integer>();
+			list.add(1);
+			list.add(3);
+			System.out.println("ArrayList : " + list.toString());
+
+			// For LinkedList
+			List<Integer> llist = new LinkedList<Integer>();
+			llist.add(2);
+			llist.add(4);
+			System.out.println("LinkedList : " + llist.toString());
+
+			// For Stack
+			List<Integer> stack = new Stack<Integer>();
+			stack.add(3);
+			stack.add(1);
+			System.out.println("Stack : " + stack.toString());
+		}
+	}
+
+
+
+
+
+
+package javasample.list;
+
+
+	// This java program find minimum and maximum value
+	// of an unsorted list of Integer by using Collection
+	import java.util.ArrayList;
+	import java.util.Collections;
+	import java.util.List;
+
+	public class minmaxfinder {
+
+		// function to find minimum value in an unsorted
+		// list in Java using Collection
+		public static Integer findMin(List<Integer> list)
+		{
+
+			// check list is empty or not
+			if (list == null || list.size() == 0) {
+				return Integer.MAX_VALUE;
+			}
+
+			// create a new list to avoid modification
+			// in the original list
+			List<Integer> sortedlist = new ArrayList<>(list);
+
+			// sort list in natural order
+			Collections.sort(sortedlist);
+
+			// first element in the sorted list
+			// would be minimum
+			return sortedlist.get(0);
+		}
+
+		// function return maximum value in an unsorted
+		// list in Java using Collection
+		public static Integer findMax(List<Integer> list)
+		{
+
+			// check list is empty or not
+			if (list == null || list.size() == 0) {
+				return Integer.MIN_VALUE;
+			}
+
+			// create a new list to avoid modification
+			// in the original list
+			List<Integer> sortedlist = new ArrayList<>(list);
+
+			// sort list in natural order
+			Collections.sort(sortedlist);
+
+			// last element in the sorted list would be maximum
+			return sortedlist.get(sortedlist.size() - 1);
+		}
+
+		public static void main(String[] args)
+		{
+
+			// create an ArrayList Object list
+			List<Integer> list = new ArrayList<>();
+
+			// add element in ArrayList object list
+			list.add(44);
+			list.add(11);
+			list.add(22);
+			list.add(33);
+
+			// print min and max value of ArrayList
+			System.out.println("Min: " + findMin(list));
+			System.out.println("Max: " + findMax(list));
+		}
+	}
+
+
+
+
+
+package javasample.list;
+
+//Java code to illustrate remove duolicate
+//of ArrayList using hashSet<> method
+
+import java.util.*;
+
+public class repeatedelements {
+	public static void main(String args[])
+	{
+
+		// create a ArrayList String type
+		ArrayList<String>
+			a = new ArrayList<String>();
+
+		// Initialize an ArrayList
+		a.add("LinkedHashSet");
+		a.add("LinkedHashSet");
+		a.add("LinkedHashSet");
+
+		// print ArrayList
+		System.out.println("Original ArrayList : "
+						+ a);
+
+		// -----Using LinkedHashSet-----
+		System.out.println("\nUsing LinkedHashSet:\n");
+
+		// create a set and copy all value of list
+		Set<String> set = new LinkedHashSet<>(a);
+
+		// create a list and copy all value of set
+		List<String> b = new ArrayList<>(set);
+
+		// print ArrayList
+		System.out.println("Modified ArrayList : "
+						+ b);
+
+		// -----Using HashSet-----
+		System.out.println("\nUsing HashSet:\n");
+
+		// create a set and copy all value of list
+		Set<String> set1 = new HashSet<>(a);
+
+		// create a list and copy all value of set
+		List<String> c = new ArrayList<>(set);
+
+		// print ArrayList
+		System.out.println("Modified ArrayList : "
+						+ c);
+	}
+}
+
+
+
+package javasample.list;
+
+//Java Program to find
+//Sublist in a List
+import java.util.*;
+
+public class sublist {
+	
+	// Main Method
+	public static void main(String[] argv) throws Exception
+	{
+
+		// Try block for exception
+		try {
+
+			ArrayList<Integer>
+				arrlist = new ArrayList<Integer>();
+
+			// Populating arrlist1
+			arrlist.add(1);
+			arrlist.add(4);
+			arrlist.add(9);
+			arrlist.add(25);
+			arrlist.add(36);
+
+			// Print arrlist
+			System.out.println("Original arrlist: "
+							+ arrlist);
+
+			// Getting the subList
+			// using subList() method
+			List<Integer> arrlist2 = arrlist.subList(2, 4);
+
+			// Print the subList
+			System.out.println("Sublist of arrlist: "
+							+ arrlist2);
+		}
+
+		// Catch block for exception
+		catch (IndexOutOfBoundsException e)
+		{
+			System.out.println("Exception thrown : " + e);
+		}
+		
+		// Catch block for exception
+		catch (IllegalArgumentException e)
+		{
+			System.out.println("Exception thrown : " + e);
+		}
+	}
+}
+
+
+
